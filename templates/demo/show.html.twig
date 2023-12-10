@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demo{% endblock %}
+
+{% block body %}
+        <h2 class="my-3 mx-3">Here you can view details of the event {{ demo.name }} </h2>
+
+    <div class="container">
+    <div class="card my-3 mx-3">
+            <img src="{{demo.image}}" class="card-img-top" alt="Background Image">
+            <div class="card-body mb-3">
+                <h5 class="card-title">Event Name: {{ demo.name }}</h5>
+                <p class="card-text"> Date of event: {{ demo.date ? demo.date|date('d-m-Y') : '' }}</p>
+                <p class="card-text"> Time of event: {{ demo.time ? demo.time|date('H:i') : '' }}</p>
+                <p class="card-text"> Event Description: {{ demo.description }}</p>
+                <p class="card-text"> Capacity: {{ demo.capacity }}</p>
+                <p class="card-text"> Contact E-Mail: {{ demo.contact }}</p>
+                <p class="card-text"> Contact Number: {{ demo.phone }}</p>
+                <p class="card-text"> Location of event: {{ demo.location }}</p>
+                <p class="card-text"> Street: {{ demo.street }}</p>
+                <p class="card-text"> Street Number: {{ demo.number }}</p>
+                <p class="card-text"> Zip Code: {{ demo.zip }}</p>
+                <p class="card-text"> City: {{ demo.city }}</p>
+                <p class="card-text"> Website: {{ demo.url }}</p>
+                <p class="card-text"> Event Type: {{ demo.type }}</p>
+
+
+            </div>
+        </div>
+        
+                <a class="btn btn-primary" href="{{ path('app_demo_index') }}"><i class="fa fa-backward"></i>&nbsp; Back </a>
+
+        </div>
+
+
+{% endblock %}

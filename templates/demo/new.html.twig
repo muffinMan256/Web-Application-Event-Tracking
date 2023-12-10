@@ -1,0 +1,176 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create
+{% endblock %}
+
+{% block body %}
+<h2 class="my-3 mx-3"> Create a new Event </h2>
+	<div class="container">
+    
+		{{ form_start(form) }}
+
+		<div class="row">
+
+			<div id="alertCreate" class="alert alert-danger alert-dismissible fade show visually-hidden" role="alert">  <strong>Holy guacamole!</strong> You should check in on some of those fields below.  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+
+		<div class="row">
+
+			<div class=" col-6 mb-3">
+
+				<div class="mb-2 my-3">
+
+					{{ form_label(form.name, 'Name of event') }}
+					{{ form_widget(form.name, {'attr': {'class': 'form-control g-col-md-4', 'placeholder': 'Please add the name of the event'}}) }}
+				</div>
+
+			</div>
+
+			<div
+				class=" col-3 mb-3 my-3">
+				<!--<select class="form-select w-75" aria-label="Default select example">  <option selected>Open this select menu</option>  <option value="1">One</option>  <option value="2">Two</option>  <option value="3">Three</option></select>-->
+				<div class="mb-2">
+					{{ form_label(form.date, 'Add the date of the event') }}
+					{{ form_widget(form.date, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+			<div
+				class=" col-3 mb-3 my-3">
+				<!--<select class="form-select w-75" aria-label="Default select example">  <option selected>Open this select menu</option>  <option value="1">One</option>  <option value="2">Two</option>  <option value="3">Three</option></select>-->
+				<div class="mb-2">
+					{{ form_label(form.time, 'Add the time of the event') }}
+					{{ form_widget(form.time, {'attr': {'class': 'form-control'}}) }}
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class=" col-12 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.description, 'Description of event') }}
+					{{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the description of the event!'}}) }}
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class=" col-6 mb-3">
+
+				<div class="mb-2">
+					{{ form_label(form.image, 'Image of Event') }}
+					{{ form_widget(form.image, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the url of the image!'}}) }}
+				</div>
+
+			</div>
+
+			<div class=" col-6 mb-3">
+
+				<div class="mb-2">
+					{{ form_label(form.capacity, 'Maximum Capacity for the event') }}
+					{{ form_widget(form.capacity, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the maximum capacity for the event!'}}) }}
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<div class=" col-6 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.contact, 'Contact Email') }}
+					{{ form_widget(form.contact, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the contact email for the event'}}) }}
+				</div>
+
+			</div>
+			<div class=" col-6 mb-3">
+
+				<div class="mb-2">
+					{{ form_label(form.phone, 'Phone Number') }}
+					{{ form_widget(form.phone, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the phone number of the contact person'}}) }}
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class=" col-2 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.location, 'Location') }}
+					{{ form_widget(form.location, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the location of the event'}}) }}
+				</div>
+
+			</div>
+
+			<div class=" col-2 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.street, 'Street') }}
+					{{ form_widget(form.street, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the name of the street where the event is located'}}) }}
+				</div>
+
+			</div>
+
+			<div class=" col-2 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.number, 'Street Number') }}
+					{{ form_widget(form.number, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the street number of the event\'s location'}}) }}
+                </div>
+
+            </div>
+
+            <div class=" col-2 mb-3">
+                <div class="mb-2">
+            {{ form_label(form.zip, 'Zip Code') }}
+            {{ form_widget(form.zip, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the Zip Code of the event\'s location'}}) }}
+				</div>
+			</div>
+
+			<div class=" col-2 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.city, 'City') }}
+					{{ form_widget(form.city, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the City where the event takes place'}}) }}
+				</div>
+			</div>
+
+			<div class=" col-2 mb-3">
+				<div class="mb-2">
+					{{ form_label(form.url, 'Image URL') }}
+					{{ form_widget(form.url, {'attr': {'class': 'form-control', 'placeholder': 'Please insert the URL of the event'}}) }}
+				</div>
+			</div>
+
+		</div>
+
+        <div class="row">
+            <div class=" col-2 mb-3">
+				<div class="mb-2">
+                    {{ form_label(form.type, 'Type') }}
+                    {{ form_widget(form.type, {'attr': {'class': 'form-control', 'placeholder': 'Please select the type of the event'}}) }}
+                </div>
+			</div>
+
+        </div>
+		<div class="row">
+            <div class=" col-2 mb-3">
+				<div class="mb-2">
+                    <a class="btn btn-primary" href="{{ path('app_demo_index') }}"><i class="fa fa-backward"></i>&nbsp; Back </a>
+                </div>
+			</div>
+			<div class="col-10 mb-3">
+				<div class="mb-2 float-end">
+					{{ include('demo/_form.html.twig') }}
+				</div>
+			</div>
+		</div>
+
+		{{ form_end(form) }}
+
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filtered Events{% endblock %}
+
+{% block body %}
+    <h2 class="my-3">Filtered Events by Type: {{ filterType }}</h2>
+    
+    {% if filteredDemos is not empty %}
+        <ul>
+            {% for demo in filteredDemos %}
+                <li>{{ demo.name }} - {{ demo.type }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events found for type: {{ filterType }}</p>
+    {% endif %}
+    
+    <a class="btn btn-primary" href="{{ path('app_demo_index') }}"><i class="fa fa-backward"></i>&nbsp; Back </a>
+{% endblock %}
